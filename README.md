@@ -71,7 +71,7 @@ his collaborative poemk, checkout:
 Conflicts](http://img.youtube.com/vi/JtIX3HJKwfo/0.jpg)](http://www.youtube.com/watch?v=JtIX3HJKwfo "1.9: Resolving Merge Conflicts - Git and GitHub for Poets")
 
 <img src="README-img/noun_pause.png" alt="pause" width = "20"/>
-**Planned Pause Point**: If you have any questions, contact your
+<b>Planned Pause Point</b>: If you have any questions, contact your
 instructor or another group.
 
 ## ☑️ Task 2: Talking with your Team
@@ -216,7 +216,7 @@ history](README-img/noun_clock_history.png) icon or **Network** graph in
 the ![line graph](README-img/noun_line_graph.png) **Insights** tab.
 
 <img src="README-img/noun_pause.png" alt="pause" width = "20"/>
-**Planned Pause Point**: If you have any questions, contact your
+<b>Planned Pause Point</b>: If you have any questions, contact your
 instructor or another group.
 
 ## ☑️ Tasks 3: Complete the RMarkdown Document
