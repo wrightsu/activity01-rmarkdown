@@ -64,7 +64,9 @@ brief demonstration that *quickly* goes through:
   Yup!
 3.  Creating a branch in RStudio and making and committing changes on
     this branch,
+  Testing again
 4.  Merging these branches to the `main` bran in GitHub.
+  One again
 
 To see Daniel from The Coding Train work through a similar process on
 his collaborative poemk, checkout:
