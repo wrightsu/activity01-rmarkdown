@@ -58,8 +58,10 @@ collaborative poem with different versions of hisself. I am going give a
 brief demonstration that *quickly* goes through:
 
 1.  Connecting RStudio and GitHub,
+  Check!
 2.  Creating a branch in GitHub and making and committing changes on
     this branch,
+  Yup!
 3.  Creating a branch in RStudio and making and committing changes on
     this branch,
 4.  Merging these branches to the `main` bran in GitHub.
