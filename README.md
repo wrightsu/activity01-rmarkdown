@@ -1,4 +1,4 @@
-Activity 1.1 - Resolving Merge Conflicts
+Activity 1 - Resolving Merge Conflicts
 ================
 
 We will begin this activity as a whole class, then breakout into Teams.
@@ -308,8 +308,7 @@ branch (select the check box next to all of the items). Verify that your
 ![denzel
 washington](https://media.giphy.com/media/l0Iy69RBwtdmvwkIo/giphy.gif?cid=ecf05e4726kfujh6vzssnilsm6n6gqt6rteytspbtbcaj4e9&rid=giphy.gif&ct=g)
 
-**Next**: Activity 2.1 will cover creating visual representations of
-data.
+**Next**: Activity 2 will cover creating visual representations of data.
 
 ### Acknowledgement
 
