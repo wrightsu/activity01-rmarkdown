@@ -3,7 +3,8 @@ Activity 1 - Resolving Merge Conflicts
 
 We will begin this activity as a whole class, then breakout into Teams.
 It is assumed that you have watched the videos contained within
-Preparation 1.
+Preparation 1 and completed Preparation 2 to get GitHub and RStudio
+communicating.
 
 In this activity, you will:
 
@@ -54,7 +55,7 @@ appreciates it when current me is thoughtful.
 ### A brief demonstration
 
 Recall Daniel from The Coding Train’s video - he was working on a
-collaborative poem with different versions of hisself. I am going give a
+collaborative poem with different versions of himself. I am going give a
 brief demonstration that *quickly* goes through:
 
 1.  Connecting RStudio and GitHub,
@@ -62,10 +63,10 @@ brief demonstration that *quickly* goes through:
     this branch,
 3.  Creating a branch in RStudio and making and committing changes on
     this branch,
-4.  Merging these branches to the `main` bran in GitHub.
+4.  Merging these branches to the `main` branch in GitHub.
 
 To see Daniel from The Coding Train work through a similar process on
-his collaborative poemk, checkout:
+his collaborative poem, checkout:
 
 [![Resolving Merge
 Conflicts](http://img.youtube.com/vi/JtIX3HJKwfo/0.jpg)](http://www.youtube.com/watch?v=JtIX3HJKwfo "1.9: Resolving Merge Conflicts - Git and GitHub for Poets")
@@ -74,7 +75,7 @@ Conflicts](http://img.youtube.com/vi/JtIX3HJKwfo/0.jpg)](http://www.youtube.com/
 <b>Planned Pause Point</b>: If you have any questions, contact your
 instructor or another group.
 
-## ☑️ Task 2: Talking with your Team
+## ☑️ Task 2: Talking with your neighbor(s)
 
 From your Preparation 1, you saw that if you (individually) made changes
 to a branched version of your document, then merged those back into your
@@ -96,212 +97,174 @@ different people (or versions of ourselves).
 For the remainder of this activity, you will be working with your
 neighbor(s).
 
-If you do not know your neighbor, introduce yourself!
+If you do not know your neighbor(s), introduce yourself!
 
-Before we get into “doing” stuff, in addition to this `README.md` file,
-there are a four versions of the same document within the `docs/`
-directory/folder of this activity repo:
+Before we get into “doing” stuff, there are a four versions of the same
+document within the `docs/` directory/folder of this activity repo:
 
 1.  `day1.md`,
 2.  `day1.html`
 3.  `day1.pdf`, and
 4.  `day1.Rmd`.
 
-With your neighbor, explore how each file looks within your repository
-(click on them to view them within GitHub). Discuss with your Team
-members what is easily viewable and what is not. Keep this in mind as we
-progress through this semester.
+With your neighbor(s), explore how each file looks within your
+repository (click on them to view them within GitHub). Discuss with your
+neighbor(s) what is easily viewable and what is not. Keep this in mind
+as we progress through this semester.
 
 Jenny Bryan provides some great information on [repo
 browsability](https://happygitwithr.com/workflows-browsability.html).
 Throughout this course, we will use my opinionated method of repo
 organization.
 
-Now onto some doing. **Important**; take these next steps slowly and
-communicate with your Team members. When you run into an issue, get a
-hold of me or another group.
+### Aside
 
-When people are collaborating, they will likely step on one another.
-This can even happen if an individual person is working on files from
-their laptop and a school computer. We will now force a conflict, then
-work to resolve overlapping changes.
+I am not too happy with my directions for resolving merge conflicts and
+honestly, I think this is too early in the semester to do this.
+Therefore, I will continue working on these for us to try later this
+semester. In the meantime, we will refine our Markdown skills.
 
-When changes are made to the same line, we must decide which change we
-want to keep (or further edit them to implement both).
+<!--
+Now onto some doing.
+**Important**; take these next steps slowly and communicate with your neighbor(s).
+When you run into an issue, get a hold of me or another group.
+
+When people are collaborating, they will likely step on each other.
+This can even happen if an individual person is working on files from their laptop and a school computer.
+We will now force a conflict, then work to resolve overlapping changes.
+
+When changes are made to the same line, we must decide which change we want to keep (or further edit them to implement both).
 
 ![Conflicting changes](README-img/collaborating-conflict.svg)
 
-Have one group member serve as the repo “owner” and the other(s) will be
-a “collaborator”. The owner should grant the collaborator(s) access to
-their `<username>/activity0101-merge-conflicts` repo:
+Have one group member serve as the repo "owner" and the other(s) will be a "collaborator".
+The owner should grant the collaborator(s) access to their `<username>/activity0101-merge-conflicts` repo:
 
-1.  Click on ![settings icon](README-img/settings.png) **Settings** tab
-    on the top menu,
-2.  On the settings page, click on **Manage access** on the left-hand
-    toolbar,
-3.  Click on the green **Invite teams or people** button, search by your
-    group members username, and select them.
+1. Click on ![settings icon](README-img/settings.png) **Settings** tab on the top menu,
+2. On the settings page, click on **Manage access** on the left-hand toolbar,
+3. Click on the green **Invite teams or people** button, search by your group members username, and select them.
 
-The collaborator can accept this invitation by either click on the link
-that was emailed to the account attached to GitHub or type the following
-in their browser, where `<owner>` is the owners GitHub username:
+The collaborator can accept this invitation by clicking on the link that was emailed to the account attached to GitHub or type the following in their browser.
+Now, each group member should create their own branch within the owner's repo (name this your name or GitHub username).
 
-`https://github.com/<owner>/activity0101-merge-conflicts`
+In your personal branch, navigate to and open the `day1.md` file to edit this document.
+Each person will make a similar change so we can resolve a merge conflict:
 
-Now, each group member should create their own branch within the owner’s
-repo (name this your name or GitHub username).
+1. At the end of the text on line 7 (i.e., "and `.pdf`.") press Enter/Return twice so that your cursor is now on a blank line 9,
+2. Type your name on this new line 9 - each member provides their first and last name (or pseudonym for those wanting to maintain some level of anonymity),
+3. Provide a meaningful commit message (and more descriptive message if so desired) and commit your changes.
 
-In your personal branch, open the `day1.md` file and edit this document.
-Each person will make a similar change to force the need for a merge
-conflict:
+Now, each member will create a **Pull Request** to add these changes back to the `main` branch.
 
-1.  Create a new line 4 (press Enter/Return at the end of line 3 so that
-    line 4 is now blank),
-2.  Type `author: "First Last"` on this new line 4, where each member
-    provides their first and last name (or pseudonym for those wanting
-    to maintain some level of anonymity),
-3.  Provide a meaningful commit message (and more descriptive message if
-    so desired) and commit your changes.
+1. Click on ![merge icon](README-img/merge.png) **Pull requests** tab on the top menu,
+2. On the pull requests page, click on the green **New pull request** button,
+3. On the "Comparing changes" page in the gray area with the ![compare icon](README-img/compare.png) icon, you want the left-hand selection to be `base: main` and the right-hand selection to be the member's branch (to request that the `main` branch pulls in the member's branch),
+4. The screen will refresh with a snapshot of the changes at the bottom. For the time being, simply click on the green **Create pull request** button,
+5. Provide a meaningful commit message (and more descriptive message if so desired) and create your pull request.
 
-Now, each member will create a **Pull Request** to add these changes
-back to the `main` branch.
+You will be taken to another page, but for now go back to the repo's main page.
+The owner will now make decisions with respect to how these changes should be pulled in.
+The collaborators should help the owner through this process.
 
-1.  Click on ![merge icon](README-img/merge.png) **Pull requests** tab
-    on the top menu,
-2.  On the pull requests page, click on the green **New pull request**
-    button,
-3.  On the “Comparing changes” page in the gray area with the ![compare
-    icon](README-img/compare.png) icon, you want the left-hand selection
-    to be `base: main` and the right-hand selection to be the member’s
-    branch (to request that the `main` branch pulls in the member’s
-    branch),
-4.  The screen will refresh with a snapshot of the changes at the
-    bottom. For the time being, simply click on the green **Create pull
-    request** button,
-5.  Provide a meaningful commit message (and more descriptive message if
-    so desired) and create your pull request.
+1. The owner should go back to the to the ![merge icon](README-img/merge.png) **Pull requests** tab on the top menu.
+  All current pull requests will be listed near the bottom of the page.
+  The owner should click on their pull request and accept the changes.
+  There should be no issues.
+2. The owner will do this for each of the remaining pull requests except there will be issues.
+  As a team, decide what information to keep (remember that you can keep both like we did in our example), then complete the pull request.
+3. You can choose to completely close the pull request or keep them viewable here.
+  You can always view closed pull requests by toggling that filter.
 
-You will be taken to another page, but for now go back to the repo’s
-main page. The owner will now make decisions with respect to how these
-changes should be pulled in. The collaborators should help the owner
-through this process.
+Congratulations, you collaborated on a GitHub project!
+As we progress through this semester, remember to take things slow and reach out when you run into problems.
+Together, all things are possible.
+If there is time at the end of class, we will do this with the other members being the repo "owner".
+However, there will be a lot of opportunities to continue practicing this throughout the semester.
+Note that to be able to collaborate (submit pull requests) to a GitHub project, users do not need to be contributors.
+They can fork the repo, make edits, and submit a pull request.
 
-1.  The owner should go back to the to the ![merge
-    icon](README-img/merge.png) **Pull requests** tab on the top menu.
-    All current pull requests will be listed near the bottom of the
-    page. The owner should click on their pull request and accept the
-    changes. There should be no issues.
-2.  The owner will do this for each of the remaining pull requests
-    except there will be issues. As a team, decide what information to
-    keep (remember that you can keep both like we did in our example),
-    then complete the pull request.
-3.  You can choose to completely close the pull request or keep them
-    viewable here. You can always view closed pull requests by toggling
-    that filter.
+Look through your `<owner>/activity0101-merge-conflicts` repo's commit history.
+Remember from The Coding Train's videos that you can view the commit history via the ![Clock history](README-img/noun_clock_history.png) icon or **Network** graph in the ![line graph](README-img/noun_line_graph.png) **Insights** tab.
 
-Congratulations, you collaborated on a GitHub project! As we progress
-through this semester, remember to take things slow and reach out when
-you run into problems. Together, all things are possible. If there is
-time at the end of class, we will do this with the other members being
-the repo “owner”. However, there will be a lot of opportunities to
-continue practicing this throughout the semester. Note that to be able
-to collaborate (submit pull requests) to a GitHub project, users do not
-need to be contributors. They can fork the repo, make edits, and submit
-a pull request.
-
-Look through your `<owner>/activity0101-merge-conflicts` repo’s commit
-history. Remember from The Coding Train’s videos that you can view the
-commit history via the ![Clock
-history](README-img/noun_clock_history.png) icon or **Network** graph in
-the ![line graph](README-img/noun_line_graph.png) **Insights** tab.
-
-<img src="README-img/noun_pause.png" alt="pause" width = "20"/>
-<b>Planned Pause Point</b>: If you have any questions, contact your
-instructor or another group.
+<img src="README-img/noun_pause.png" alt="pause" width = "20"/> <b>Planned Pause Point</b>: If you have any questions, contact your instructor or another group.
+-->
 
 ## ☑️ Tasks 3: Complete the RMarkdown Document
 
 For the rest of this class period, you will complete the RMarkdown
 document (`activity0101-bechdel-test.Rmd`) with your group members. Your
-instructor will continue circling through the Teams and be available to
+instructor will continue circling through the groups and be available to
 help when needed.
 
-If you wish, this would be a good time to flip roles.
+<!-- If you wish, this would be a good time to flip roles.-->
 
-1.  In the main repo page on GitHub, click on the green **Code** button.
+1.  In this GitHub repo, click on the ![fork](README-img/fork-icon.png)
+    **Fork** icon near the upper-right-hand corner. You should be taken
+    a copy of this repo that is in your GitHub account - your page title
+    should be `{username}/activity01-merge-conflicts`, where
+    `{username}` is replaced with your GitHub username.
+2.  In the main repo page on GitHub, click on the green **Code** button.
     Verify that **HTTPS** is underlined in red on the pop-down, then
     copy the URL provided.
-2.  In RStudio, click on the
+3.  In RStudio, click on the
     <img src="README-img/rproj-icon.png" alt="RStudio Project" width = "20"/>
     icon (the icon below the Edit drop-down menu),
-3.  Click on **Version Control** on the *New Project Wizard* pop-up,
-4.  Click on **Git** and you should be on a “Clone Git Repository” page,
-5.  Paste the URL in the “Repository URL” text field,
-6.  The “Project directory name” text field should have automatically
+4.  Click on **Version Control** on the *New Project Wizard* pop-up,
+5.  Click on **Git** and you should be on a “Clone Git Repository” page,
+6.  Paste the URL in the “Repository URL” text field,
+7.  The “Project directory name” text field should have automatically
     populated with `activity0101-merge-conflicts`. If yours did not,
     click into this box and press Ctrl/Cmd (usually this is a Mac
     issue);
-7.  In the “Create project as subdirectory of” field, click on
+8.  In the “Create project as subdirectory of” field, click on
     **Browse…**. Navigate into your “STA 418” of “STA 518” (depending on
     what you created in Preparation 2), then within this folder, create
     a **New Folder** called “Activities”, think click **Choose**. Note
     that I am forcing you to use my file system management style.
-8.  Click on **Create Project**.
+9.  Click on **Create Project**.
 
 You are probably currently in the `main` branch (the drop-down menu next
 to the <img src="README-img/branch.png" alt="branch" width = "20"/> icon
-in the **Git** pane).
+in the **Git** pane). We will continue working within your main branch,
+but I want you to notice that you can create new branches within
+RStudio!
 
-If you closed the branches in the previous task, create a new one.
-
--   In the RStudio **Git** pane, click on the
-    <img src="README-img/branch.png" alt="branch" width = "20"/> icon,
--   In the pop-up window, give your branch a name and click **Create**.
-
-If you did not close the branches, select your personal branch from the
-drop-down options.
+<!--
+- In the RStudio **Git** pane, click on the <img src="README-img/branch.png" alt="branch" width = "20"/> icon,
+- In the pop-up window, give your branch a name and click **Create**.
+-->
 
 In the **Files** pane, click on the `activity0101-bechdel-test.Rmd`.
-Update `author: "Name"` to your name (we will combine these at the end
-with a pull request).
+Update `author: "Name"` to your name.
 
 Do not continue in this README document until after your group has
-completed the `.Rmd` files and pushed to their `<username>` branches.
+completed the `.Rmd` file, then stage, commit, and push to this to your
+repo.
 
 ![Later… from Spongebob
 Squarepants](https://i.ytimg.com/vi/tS9DkqgS488/maxresdefault.jpg)
 
+<!--
 ## ☑️ Tasks 4: Combining your work
 
-This works best if you and your Team Members can collaborate live with
-one another while you attempt to do it the first few times. Have each
-member stage, commit, and push **only** the
-`activity0101-bechdel-test.Rmd` file to your individual GitHub branches.
+This works best if you and your Team Members can collaborate live with one another while you attempt to do it the first few times.
+Have each member stage, commit, and push **only** the `activity0101-bechdel-test.Rmd` file to your individual GitHub branches.
 
-With all of your individual branches pushed to GitHub, have each member
-create a **Pull Request**. Make sure that you are pull requesting the
-the `main` branch (you want to send your individual branches to the
-combined `main` branch).
+With all of your individual branches pushed to GitHub, have each member create a **Pull Request**.
+Make sure that you are pull requesting the the `main` branch (you want to send your individual branches to the combined `main` branch).
 
-One member should serve as the “owner” (this is a role that this member
-is verbally agreeing to; there is nothing that needs to be done in
-RStudio or GitHub). All other members will verbally assist the owner
-resolving the conflicts so that your final report on your `main` branch
-is complete and somehow a combination of each members work (you might
-need to do some additional editing).
+One member should serve as the "owner" (this is a role that this member is verbally agreeing to; there is nothing that needs to be done in RStudio or GitHub).
+All other members will verbally assist the owner resolving the conflicts so that your final report on your `main` branch is complete and somehow a combination of each members work (you might need to do some additional editing).
 
-The owner should now go back to their RStudio session. Now, pull the
-changes that are on your Team’s `main` branch by clicking on the
-<img src="README-img/pull-icon.png" alt="pull" width = "20"/> icon in
-the **Git** pane.
+The owner should now go back to their RStudio session.
+Now, pull the changes that are on your Team's `main` branch by clicking on the <img src="README-img/pull-icon.png" alt="pull" width = "20"/> icon in the **Git** pane.
 
-The owner should then switch to the `main` branch (this can be done by
-selecting `main` from the drop-down option next to the
-<img src="README-img/branch.png" alt="branch" width = "20"/>) icon. Open
-the updated `activity0101-bechdel-test.Rmd` file. Knit the updated
-RMarkdown document. Finally, commit and push EVERYTHING to the `main`
-branch (select the check box next to all of the items). Verify that your
-`main` branch on GitHub has everything.
+The owner should then switch to the `main` branch (this can be done by selecting `main` from the drop-down option next to the <img src="README-img/branch.png" alt="branch" width = "20"/>) icon.
+Open the updated `activity0101-bechdel-test.Rmd` file.
+Knit the updated RMarkdown document.
+Finally, commit and push EVERYTHING to the `main` branch (select the check box next to all of the items).
+Verify that your `main` branch on GitHub has everything.
+-->
 
 **YOU DID IT!**
 
