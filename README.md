@@ -1,7 +1,6 @@
 Activity 1 - RMarkdown
 ================
 
-We will begin this activity as a whole class, then breakout into Teams.
 It is assumed that you have watched the videos contained within
 Preparation 1.
 
@@ -61,8 +60,8 @@ you forgot how to do that, follow the directions in Task 1 except for
 this activity - Activity 1.
 
 <img src="README-img/noun_pause.png" alt="pause" width = "20"/>
-<b>Planned Pause Point</b>: If you have any questions, contact your
-instructor or another group.
+<b>Planned Pause Point</b>: If you have any questions, contact Bradford
+or another group.
 
 <!--Recall Daniel from The Coding Train's video - he was working on a collaborative poem with different versions of himself.
 I am going give a brief demonstration that *quickly* goes through:
@@ -77,7 +76,7 @@ To see Daniel from The Coding Train work through a similar process on his collab
 [![Resolving Merge Conflicts](http://img.youtube.com/vi/JtIX3HJKwfo/0.jpg)](http://www.youtube.com/watch?v=JtIX3HJKwfo "1.9: Resolving Merge Conflicts - Git and GitHub for Poets")
 
 
-<img src="README-img/noun_pause.png" alt="pause" width = "20"/> <b>Planned Pause Point</b>: If you have any questions, contact your instructor or another group.
+<img src="README-img/noun_pause.png" alt="pause" width = "20"/> <b>Planned Pause Point</b>: If you have any questions, contact Bradford or another group.
 -->
 
 ## Collaborating with No Conflicts
@@ -201,23 +200,192 @@ They can fork the repo, make edits, and submit a pull request.
 Look through your `<owner>/activity0101-merge-conflicts` repo's commit history.
 Remember from The Coding Train's videos that you can view the commit history via the ![Clock history](README-img/noun_clock_history.png) icon or **Network** graph in the ![line graph](README-img/noun_line_graph.png) **Insights** tab.
 
-<img src="README-img/noun_pause.png" alt="pause" width = "20"/> <b>Planned Pause Point</b>: If you have any questions, contact your instructor or another group.
+<img src="README-img/noun_pause.png" alt="pause" width = "20"/> <b>Planned Pause Point</b>: If you have any questions, contact Bradford or another group.
 -->
 
-## ☑️ Tasks 3: Complete the RMarkdown Document
+## Updating our Workflow
+
+When doing work on activities in this course, our Workflow is going to
+be:
+
+1.  Go to Bradford’s repository;
+2.  Fork a copy of Bradford’s repository into your GitHub space;
+3.  Clone your GitHub repository to your RStudio session;
+4.  Do work in RStudio: save, stage, provide a commit message, commit,
+    push; and
+5.  Continue until done.
+
+Before we can do this, we need to get RStudio and GitHub communicating.
+
+### ☑️ Tasks 3: Configure Git in RStudio
+
+1.  Login to the [RStudio Workbench](https://rstudio.gvsu.edu/) using
+    your GVSU username and password,
+
+2.  Verify that you are in an RStudio session (i.e., not the RStudio
+    Workbench Sessions/Project screen).
+
+    There are a couple of ways to configure Git in RStudio. For STA
+    418/518, we will use `{usethis}`.
+
+    Note that when you see something like `{thing}` in my documents, I
+    mean,“the R package called `thing`.”
+
+    We will use the `edit_git_config` function from `{usethis}`.
+    Throughout the semester, I will shorten this to be
+    `usethis::edit_git_config` or, “from the R package `usethis`, use
+    the function `edit_git_config`” (in general, `package::function`).
+
+3.  In your **Console** pane (left-hand pane), type the following
+    pressing Enter/Return after each line:
+
+    ``` r
+    library(usethis)
+    edit_git_config()
+    ```
+
+    A file should open in the pane above your **Console** that is called
+    `.gitconfig`. In this file, copy the information provided below,
+    then update it with your preferred name (or pseudonym) and email
+    (can be any email, but it would probably be helpful to use the same
+    one you signed up for GitHub to avoid confusion). This information
+    will be publicly available.
+
+        [user]
+          name = "name"
+          email = "user@subdomain.domain"
+        [credential]
+          helper = cache --timeout=10000000
+
+    Note that the lines begining with a left square bracket (`[`) start
+    at the left most entry position and the lines that do not begin with
+    a left square bracket have two spaces, then the information.
+
+    Also note that we are instructing RStudio to remember your GitHub
+    credentials for 10,000,000 seconds (or roughly 16 weeks) in the
+    `[credential]` portion. RStudio is not remembering your credentials
+    yet, but we will resolve this shortly.
+
+4.  Click on the
+    <img src="README-img/save-icon.png" alt="save" width = "20"/> icon
+    and you can close this `.gitconfig` file.
+
+<img src="README-img/noun_pause.png" alt="pause" width = "20"/>
+<b>Planned Pause Point</b>: If you have any questions, contact Bradford
+or another group.
+
+### ☑️ Tasks 4: Connect RStudio and GitHub
+
+Now that you have Git set up within RStudio, we can enable RStudio and
+GitHub to communicate. To do this, we will need your GitHub username and
+a Personal Access Token (PAT). PATs are designed to be more secure than
+your password when communicating between your computer session and
+GitHub. Conveniently, `{usethis}` has a function for this!
+
+1.  To create a PAT, type the following in your **Console** and press
+    Enter/Return:
+
+    ``` r
+    create_github_token()
+    ```
+
+    Note that you previously loaded `{usethis}` (using
+    `library(usethis)`) so I did not ask you to do this again. **Once
+    you load a package in your current RStudio session, you do not need
+    to load it again.**
+
+2.  You will be directed to a “New personal access token” page on GitHub
+    in your browser. Since I work on multiple machines (i.e., my
+    personal laptop, my work laptop, my personal desktop, and the
+    RStudio Workspace), I like to provide a unique name for each PAT.
+    For example, in the **Note** text field, I called this token “GVSU
+    RStudio Workbench”.
+
+    Most of the other options you will accept the default selections.
+    However, you might want to change the **Expiration** date. A couple
+    of suggestions: have this PAT expire at the end of this semester
+    (e.g., August 10, 2022) or (**risky**) choose “No expiration”. After
+    choosing a PAT expiration, scroll down and click on the green
+    **Generate Token** button.
+
+3.  After clicking on **Generate Token**, you will be taken to a
+    “Personal access tokens” page that has a seemingly random string
+    presented to you beginning with `ghp_`. Keep this page open for a
+    little bit (I will tell you when it is safe to close it), as once
+    you close this page, you will never be able to view this PAT again!
+    I highly recommend that you store this code somewhere safe (e.g., a
+    password manager tool). However, if you do lose it, you can go
+    through this process again to create a new one.
+
+4.  Now we need to associate this PAT in RStudio so that RStudio can
+    connect to your GitHub account. Back in your RStudio **Console**,
+    type the following and press Enter/Return after each line:
+
+    ``` r
+    library(gitcreds)
+    gitcreds_set()
+    ```
+
+5.  In your **Console** you will be asked to
+    `? Enter password or token:` Paste your PAT here (NOT your GitHub
+    password) and press Enter/Return. You should see a message similar
+    to:
+
+        -> Adding new credentials...
+        -> Removing credentials from cache...
+        -> Done.
+
+<img src="README-img/noun_pause.png" alt="pause" width = "20"/>
+<b>Planned Pause Point</b>: If you have any questions, contact Bradford
+or another group.
+
+### ☑️ Tasks 5: Clone GitHub repo
+
+Now that RStudio and GitHub are connected, we can clone this repo (i.e.,
+copy the repo to our RStudio session)!
+
+1.  In RStudio, click on the
+    <img src="README-img/rproj-icon.png" alt="RStudio Project" width = "20"/>
+    icon (the icon below the Edit drop-down menu);
+2.  Click on **Version Control** on the *New Project Wizard* pop-up;
+3.  Click on **Git** and you should be on a “Clone Git Repository” page;
+4.  Back to your `activity01-rmarkdown` GitHub repo, click on the green
+    **Code** button near the top of the page;
+5.  Verify that **HTTPS** is underlined in red on the pop-down, then
+    copy the URL provided;
+6.  Back in RStudio, paste the URL in the “Repository URL” text field;
+7.  The “Project directory name” text field should have automatically
+    populated with `activity01-rmarkdown`. If yours did not, click into
+    this box and press Ctrl/Cmd (usually this is a Mac issue);
+8.  In the “Create project as subdirectory of” field, click on
+    **Browse…**. Create a **New Folder** called “STA 418” of “STA 518”
+    (depending on your course), then within this folder, create a **New
+    Folder** called “Preparations”, think click **Choose**. Note that I
+    am forcing you to use my file system management style.
+9.  Click on **Create Project**.
+
+Your screen should refresh and the **Files** pane should say that you
+are currently in your `activity01-rmarkdown` folder that currently has
+three files (`.gitignore`, `activity01-rmarkdown.Rproj`, and
+`README.md`) and a folder (`README-img/`). If you are asked for your
+GitHub credentials, provide your GitHub username and your PAT.
+
+<img src="README-img/noun_pause.png" alt="pause" width = "20"/>
+<b>Planned Pause Point</b>: If you have any questions, contact Bradford
+or another group.
+
+### ☑️ Tasks 6: Complete the `Rmd` file
 
 For the rest of this class period, you will complete the RMarkdown
-document (`activity0101-bechdel-test.Rmd`) with your group members. Your
-instructor will continue circling through the groups and be available to
+document (`activity01-bechdel-test.Rmd`) with your group members.
+Bradford will continue circling through the groups and be available to
 help when needed.
 
 <!-- If you wish, this would be a good time to flip roles.-->
 
-1.  In this GitHub repo, click on the ![fork](README-img/fork-icon.png)
-    **Fork** icon near the upper-right-hand corner. You should be taken
-    a copy of this repo that is in your GitHub account - your page title
-    should be `{username}/activity01-merge-conflicts`, where
-    `{username}` is replaced with your GitHub username.
+1.  Verify that you are in your forked version of this rep - your page
+    title should be `username/activity01-rmarkdown`, where `username` is
+    replaced with your GitHub username.
 2.  In the main repo page on GitHub, click on the green **Code** button.
     Verify that **HTTPS** is underlined in red on the pop-down, then
     copy the URL provided.
@@ -228,9 +396,8 @@ help when needed.
 5.  Click on **Git** and you should be on a “Clone Git Repository” page,
 6.  Paste the URL in the “Repository URL” text field,
 7.  The “Project directory name” text field should have automatically
-    populated with `activity0101-merge-conflicts`. If yours did not,
-    click into this box and press Ctrl/Cmd (usually this is a Mac
-    issue);
+    populated with `activity0101-rmarkdown`. If yours did not, click
+    into this box and press Ctrl/Cmd (usually this is a Mac issue);
 8.  In the “Create project as subdirectory of” field, click on
     **Browse…**. Navigate into your “STA 418” of “STA 518” (depending on
     what you created in Preparation 2), then within this folder, create
@@ -249,15 +416,15 @@ RStudio!
 - In the pop-up window, give your branch a name and click **Create**.
 -->
 
-In the **Files** pane, click on the `activity0101-bechdel-test.Rmd`.
+In the **Files** pane, click on the `activity01-bechdel-test.Rmd`.
 Update `author: "Name"` to your name.
 
 Do not continue in this README document until after your group has
 completed the `.Rmd` file, then stage, commit, and push to this to your
 repo.
 
-![Later… from Spongebob
-Squarepants](https://i.ytimg.com/vi/tS9DkqgS488/maxresdefault.jpg)
+![Did you see… the memo… about
+this?](https://media.giphy.com/media/lSVL6vdhdZVPW/giphy.gif)
 
 <!--
 ## ☑️ Tasks 4: Combining your work
@@ -283,14 +450,14 @@ Verify that your `main` branch on GitHub has everything.
 
 **YOU DID IT!**
 
-![denzel
-washington](https://media.giphy.com/media/l0Iy69RBwtdmvwkIo/giphy.gif?cid=ecf05e4726kfujh6vzssnilsm6n6gqt6rteytspbtbcaj4e9&rid=giphy.gif&ct=g)
-
 **Next**: Activity 2 will cover creating visual representations of data.
 
-### Acknowledgement
+## Attribution
 
-Parts of this README are based on [The Coding
+This document is based on David Keyes’s tutorial at [R for the Rest of
+Us](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/),
+[Happy Git with R](http://happygitwithr.com/) by Jenny Bryan et al.,
+[The Coding
 Train’s](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw)
-GitHub YouTube video series and [The
+GitHub YouTube video series, and [The
 Carpentries’](https://carpentries.org/) Git training.
