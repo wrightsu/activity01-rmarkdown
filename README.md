@@ -1,35 +1,35 @@
-Activity 1 - Resolving Merge Conflicts
+Activity 1 - RMarkdown
 ================
 
 We will begin this activity as a whole class, then breakout into Teams.
 It is assumed that you have watched the videos contained within
-Preparation 1 and completed Preparation 2 to get GitHub and RStudio
-communicating.
+Preparation 1.
 
 In this activity, you will:
 
--   Connect GitHub and RStudio and share files between these two tools.
+-   Fork a GitHub repository.
+-   Connect GitHub and RStudio and share files between these two tools
+    (i.e., “clone” and “pull”).
 -   Edit and view changes in narrative text and R code chunks in an
     RMarkdown document.
 -   Create a branch within a GitHub repository.
--   Fork a repository and make a pull request.
--   Resolve merge conflicts caused when multiple users edit a file at
-    the same time.
+-   Create and resolve a Pull Request between you and yourself.
 
-## ☑️ Task 1: Forking A Collaborative Poem
+## Version Control Overview
 
-In this activity, we begin collaborating on coding projects.
-Collaborating on projects might be with you and colleagues **or**,
-simply, you and future you. Version control is one way to keep track of
-what a person did and when, which is much better than this system:
+In this activity, we begin collaborating on coding projects with
+ourselves. However, we can collaborate on projects with colleagues,
+online acquaintances, **or**, simply, you and future you. Version
+control is one way to keep track of what a person did and when, which is
+much better than the system that I used through most of my studies:
 
 ![“Piled Higher and Deeper” by Jorge
 Cham](http://phdcomics.com/comics/archive/phd101212s.gif)
 
-The Google Workspace (Drive, Docs, etc.) is a spectacular tool to use to
-collaborate on many different types of projects. Google even has a
-collaborating on coding notebooks (i.e., [Google
-Colab](https://youtu.be/inN8seMm7UI)); however, but is lacking in
+The Google Workspace (Drive, Docs, etc.) is a spectacular tool where
+people collaborate on many different types of projects. Google even has
+a collaborating on coding notebooks (i.e., [Google
+Colab](https://youtu.be/inN8seMm7UI)); however, it is lacking in some
 programming language options. We can think of GitHub as a Google Drive
 for collaborating on coding/software projects. Git would then be like
 [Version History](https://support.google.com/docs/answer/190843?hl=en)
@@ -38,50 +38,56 @@ for a Google Doc.
 Version control systems record the changes that are made each step of a
 project. This allows you to rewind to start at a previous version and
 play back through changes you made to eventually arrive at the most
-recent version. This is similar to what you did in your Learning Journal
-entry for Preparation 1.
+recent version. Think back on what you did in your work for Preparation
+1.
 
 ![Changes are saved sequentially](README-img/recording-changes.svg)
 
-Each time you make changes, you can (and should), provide a brief, yet
-informative commit message. This commit message is additional
+Each time you make a change, you can (and should), provide a brief,
+informative **commit message**. A commit message is additional
 information that can be used to help keep track of what changes were
 made. There are many opinions on what needs to be included in commit
 messages. My recommendation is to use active terms and be brief, but say
 enough as to *why* this change was needed. Note that I do not always
 follow this recommendation (I get lazy too), but future me really
-appreciates it when current me is thoughtful.
+appreciates it when current me is thoughtful 😄
 
-### A brief demonstration
+### ☑️ Task 1: Fork This Repository
 
-Recall Daniel from The Coding Train’s video - he was working on a
-collaborative poem with different versions of himself. I am going give a
-brief demonstration that *quickly* goes through:
-
-1.  Connecting RStudio and GitHub,
-2.  Creating a branch in GitHub and making and committing changes on
-    this branch,
-3.  Creating a branch in RStudio and making and committing changes on
-    this branch,
-4.  Merging these branches to the `main` branch in GitHub.
-
-To see Daniel from The Coding Train work through a similar process on
-his collaborative poem, checkout:
-
-[![Resolving Merge
-Conflicts](http://img.youtube.com/vi/JtIX3HJKwfo/0.jpg)](http://www.youtube.com/watch?v=JtIX3HJKwfo "1.9: Resolving Merge Conflicts - Git and GitHub for Poets")
+Recall from [Activity
+0](https://github.com/gvsu-sta518/activity00-markdown#task-1-forking-the-repository)
+that you made a personal copy of my repository to your GitHub area. If
+you forgot how to do that, follow the directions in Task 1 except for
+this activity - Activity 1.
 
 <img src="README-img/noun_pause.png" alt="pause" width = "20"/>
 <b>Planned Pause Point</b>: If you have any questions, contact your
 instructor or another group.
 
-## ☑️ Task 2: Talking with your neighbor(s)
+<!--Recall Daniel from The Coding Train's video - he was working on a collaborative poem with different versions of himself.
+I am going give a brief demonstration that *quickly* goes through:
+
+1. Connecting RStudio and GitHub,
+2. Creating a branch in GitHub and making and committing changes on this branch,
+3. Creating a branch in RStudio and making and committing changes on this branch,
+4. Merging these branches to the `main` branch in GitHub.
+
+To see Daniel from The Coding Train work through a similar process on his collaborative poem, checkout:
+
+[![Resolving Merge Conflicts](http://img.youtube.com/vi/JtIX3HJKwfo/0.jpg)](http://www.youtube.com/watch?v=JtIX3HJKwfo "1.9: Resolving Merge Conflicts - Git and GitHub for Poets")
+
+
+<img src="README-img/noun_pause.png" alt="pause" width = "20"/> <b>Planned Pause Point</b>: If you have any questions, contact your instructor or another group.
+-->
+
+## Collaborating with No Conflicts
 
 From your Preparation 1, you saw that if you (individually) made changes
 to a branched version of your document, then merged those back into your
 `main` branch, there were no issues with the merge. In fact, two people
 could be editing the same file (on the same branch) and commit changes
-with no issues as long as the edits do not occur on the same line.
+with no issues occurring as long as the edits do not happen on the same
+line.
 
 ![Different changes can be made, then
 merged](README-img/collaborating-no-conflict.svg)
@@ -95,34 +101,43 @@ sync across different computers to help facilitate collaboration among
 different people (or versions of ourselves).
 
 For the remainder of this activity, you will be working with your
-neighbor(s).
+neighbor(s). Remember to introduce yourself!
 
-If you do not know your neighbor(s), introduce yourself!
+### Aside
 
-Before we get into “doing” stuff, there are a four versions of the same
-document within the `docs/` directory/folder of this activity repo:
+I think it is too early to worry about merge conflicts as we are trying
+to simply become familiar with GitHub. Therefore, we will circle back to
+this after we update our STA 418/518 Workflow - focusing on
+collaborating with current and future you. So far our workflow has been:
+
+1.  Go to Bradford’s repository, and
+2.  Fork a copy of Bradford’s repository into your GitHub space.
+
+In a bit, we will see how to bring this repository into RStudio so that
+we can edit and work with the R programming language!
+
+### ☑️ Task 2: Exploring Files in GitHub
+
+Before we get into updating our Workflow, let’s see what typical file
+types look like in GitHub. There are a five versions of the same
+document within the `docs/` directory/folder of this repo:
 
 1.  `day1.md`,
-2.  `day1.html`
-3.  `day1.pdf`, and
-4.  `day1.Rmd`.
+2.  `day1.html`,
+3.  `day1.docx`,
+4.  `day1.pdf`, and
+5.  `day1.Rmd`.
 
 With your neighbor(s), explore how each file looks within your
 repository (click on them to view them within GitHub). Discuss with your
 neighbor(s) what is easily viewable and what is not. Keep this in mind
-as we progress through this semester.
+as we progress through this semester. That is, what do you need to
+include so that people can view your work as you intended?
 
 Jenny Bryan provides some great information on [repo
 browsability](https://happygitwithr.com/workflows-browsability.html).
 Throughout this course, we will use my opinionated method of repo
 organization.
-
-### Aside
-
-I am not too happy with my directions for resolving merge conflicts and
-honestly, I think this is too early in the semester to do this.
-Therefore, I will continue working on these for us to try later this
-semester. In the meantime, we will refine our Markdown skills.
 
 <!--
 Now onto some doing.
