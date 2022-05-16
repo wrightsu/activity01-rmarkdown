@@ -1,6 +1,6 @@
 ---
 title: "Bechdel Test"
-author: "Name"
+author: "Summer"
 output: github_document
 ---
 
